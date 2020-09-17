@@ -3,6 +3,7 @@
 #include <tuple>
 #include <string>
 
+#include "util.h"
 #include "vec3.h"
 #include "vec4.h"
 #include "mat4.h"
@@ -21,14 +22,13 @@ static std::vector<std::tuple<TestId, Line, Expression>> failedTests;
 int main()
 { 
     printf("\n\n--- %s test\n", programName);
+    const float E = 0.00001;
+    const vec3 E3(E, E, E);
+    const vec4 E4(E, E, E, E);
 
     //------------------------------------------------------------------------
     {
         printf("vec3:\n");
-
-        static const float E = 0.00001;
-        static const vec3 E3(E, E, E);
-        static const vec4 E4(E, E, E, E);
 
         // construction
         vec3 v0(1.0f, 2.0f, 3.0f);
@@ -95,7 +95,7 @@ int main()
 
         // length
         v2 = vec3(1.0f, 2.0f, 3.0f);
-        VERIFY(n_fequal(length(v2), 3.74165738, 0.0001f));
+        VERIFY(n_fequal(length(v2), 3.74165738f, 0.0001f));
         
         // cross
         v0 = vec3(1.0f, 0.0f, 0.0f);
@@ -342,10 +342,9 @@ int main()
                                       vec4(      0.0f, 2.11053f,       0.0f,  0.0f),
                                       vec4(      0.0f,     0.0f, -1.002004f, -1.0f),
                                       vec4(      0.0f,     0.0f,  -0.1002f,   0.0f))));
+#endif
+#endif
     }
-#endif
-
-#endif
 
     //------------------------------------------------------------------------
     // Various tests between different types
@@ -355,8 +354,8 @@ int main()
                   vec4(0.0f, 1.0f, 0.0f, 0.0f),
                   vec4(0.0f, 0.0f, 1.0f, 0.0f),
                   vec4(1.0f, 2.0f, 3.0f, 1.0f));
-    v0 = vec4(1.0f, 0.0f, 0.0f, 1.0f);
-    v1 = m * v0;
+    vec4 v0 = vec4(1.0f, 0.0f, 0.0f, 1.0f);
+    vec4 v1 = m * v0;
     VERIFY(v1 == vec4(2.0f, 2.0f, 3.0f, 1.0f));
     v0 = vec4(1.0f, 0.0f, 0.0f, 0.0f);
     v1 = m * v0;

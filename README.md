@@ -26,7 +26,7 @@ Make sure to implement according to the following class descriptions, or modify 
     +operator*(scalar: f32 const):vec3
     +operator==(rhs: vec3 const&):bool
     +operator!=(rhs: vec3 const&):bool
-    +operator[](i: ui32 const):f32 // range [0,2]
+    +operator[](i: ui32 const):f32& // range [0,2]
 #### Functions
     dot(a: vec3 const&, b: vec3 const&):f32
     length(v: vec3 const&):f32

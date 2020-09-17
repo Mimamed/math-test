@@ -9,6 +9,9 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.2)
 SET(files
 		main.cc
 		util.h
+		vec4.h
+		vec3.h
+		mat4.h
 	)
 ####################################
 
