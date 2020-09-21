@@ -26,11 +26,12 @@ static std::vector<FailedTest> failedTests;
 int main()
 { 
     printf("\n\n--- %s test\n", programName);
-    const float E = 0.00001;
+    
+    //------------------------------------------------------------------------
+    const float E = 0.00001f;
     const vec3 E3(E, E, E);
     const vec4 E4(E, E, E, E);
 
-    //------------------------------------------------------------------------
     {
         printf("vec3:\n");
 
@@ -269,17 +270,17 @@ int main()
                                      vec4( 0.0f,  0.841471f,  0.540302f, 3.0f),
                                      vec4( 0.0f,       0.0f,       0.0f, 1.0f))));
         // rotations
-        const mat4 rotX = rotationx(2.0);
+        const mat4 rotX = rotationx(2.0f);
         VERIFY(matnearequal(rotX, mat4(vec4(1.000000f,  0.000000f,  0.000000f, 0.000000f),
                                        vec4(0.000000f, -0.416147f,  0.909297f, 0.000000f),
                                        vec4(0.000000f, -0.909297f, -0.416147f, 0.000000f),
                                        vec4(0.000000f,  0.000000f,  0.000000f, 1.000000f))));
-        const mat4 rotY = rotationy(-1.7);
+        const mat4 rotY = rotationy(-1.7f);
         VERIFY(matnearequal(rotY, mat4(vec4(-0.128845f, 0.000000f,  0.991665f, 0.000000f),
                                        vec4( 0.000000f, 1.000000f,  0.000000f, 0.000000f),
                                        vec4(-0.991665f, 0.000000f, -0.128845f, 0.000000f),
                                        vec4( 0.000000f, 0.000000f,  0.000000f, 1.000000f))));
-        const mat4 rotZ = rotationz(3.1);
+        const mat4 rotZ = rotationz(3.1f);
         VERIFY(matnearequal(rotZ, mat4(vec4(-0.999135f,  0.041581f, 0.000000f, 0.000000f),
                                        vec4(-0.041581f, -0.999135f, 0.000000f, 0.000000f),
                                        vec4( 0.000000f,  0.000000f, 1.000000f, 0.000000f),
