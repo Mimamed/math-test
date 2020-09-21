@@ -49,7 +49,7 @@ inline bool nearequal(vec4 v0, vec4 v1, vec4 epsilon)
 
 inline bool matnearequal(mat4 lhs, mat4 rhs)
 {
-	const float E = 0.00001;
+	const float E = 0.00001f;
     const vec4 E4(E, E, E, E);
 	return nearequal(lhs[0], rhs[0], E4) && nearequal(lhs[1], rhs[1], E4) && nearequal(lhs[2], rhs[2], E4) && nearequal(lhs[3], rhs[3], E4);
 }
