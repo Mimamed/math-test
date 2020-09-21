@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <vector>
-#include <tuple>
 #include <string>
 
 #include "util.h"
@@ -15,8 +14,13 @@ const char* f = "FAILED";
 typedef unsigned TestId;
 typedef unsigned Line;
 typedef std::string Expression;
+struct FailedTest {
+    TestId id;
+    Line line;
+    Expression expr;
+};
 static TestId testId = 0;
-static std::vector<std::tuple<TestId, Line, Expression>> failedTests;
+static std::vector<FailedTest> failedTests;
 #define VERIFY(RESULT) {  testId++; printf("#%0*u: %*s\n", 3, testId, 6, RESULT ? s : f); if (!(RESULT)) failedTests.push_back({testId, __LINE__, #RESULT}); }
 
 int main()
@@ -309,7 +313,7 @@ int main()
 
         // determinant
         const float det = determinant(mRotOneX_Trans123);
-        VERIFY(1.0f == det);
+        VERIFY(n_fequal(1.0f, det, 0.0001f));
 
 #ifdef TEST_VIEW_PERSPECTIVE
         const vec3 eye(3.0f, 2.0f, 10.0f);
@@ -376,7 +380,7 @@ int main()
         return 0;
     }
     for (auto t : failedTests)
-        printf("Test #%u failed. Line %u, Expression: %s\n", std::get<0>(t), std::get<1>(t), std::get<2>(t).c_str());
+        printf("Test #%u failed. Line %u, Expression: %s\n", t.id, t.line, t.expr.c_str());
     printf("--- %u/%u tests failed!\n\n", (unsigned)failedTests.size(), testId);
     return 1;
 } 
