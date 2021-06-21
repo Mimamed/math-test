@@ -6,6 +6,14 @@ Build and run test by executing the run_test.bat file, or by using CMake GUI.
 
 Make sure to implement according to the following class descriptions, or modify the test so that it uses your own naming convention and coding style.
 
+# Syntax
+* `name: type` = variable or parameter/argument
+* `f32` = 32 bit floating point number
+* `const&` = const reference
+* `+` = public variable or method
+* `-` = private variable or method
+* `name(args):return_type` = function or method
+
 # class vec3
 #### Members
     +x: f32
@@ -77,7 +85,7 @@ Make sure to implement according to the following class descriptions, or modify 
     determinant(m: mat4 const&):f32
     inverse(m: mat4 const&):mat4 // returns identity upon failure
     transpose(m: mat4 const&):mat4
-    rotationx(rad: f32 const):mat4
+    rotationx(rad: f32 const):mat4 // radians
     rotationy(rad: f32 const):mat4
     rotationz(rad: f32 const):mat4
     rotationaxis(v: vec3 const&, rad: f32 const):mat4
