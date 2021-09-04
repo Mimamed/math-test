@@ -35,7 +35,7 @@ Make sure to implement according to the following class descriptions, or modify 
     +operator==(rhs: vec3 const&):bool
     +operator!=(rhs: vec3 const&):bool
     +operator[](i: ui32 const):f32& // range [0,2]
-#### Functions
+#### Functions (not part of the class)
     dot(a: vec3 const&, b: vec3 const&):f32
     length(v: vec3 const&):f32
     cross(a: vec3 const&, b: vec3 const&):vec3
@@ -63,7 +63,7 @@ Make sure to implement according to the following class descriptions, or modify 
     +operator==(rhs: vec4 const&):bool
     +operator!=(rhs: vec4 const&):bool
     +operator[](i: ui32 const):f32 // range [0,3]
-#### Functions
+#### Functions (not part of the class)
     dot(a: vec4 const&, b: vec4 const&):f32
     length(v: vec4 const&):f32
     normalize(v: vec4 const&):vec4
@@ -81,7 +81,7 @@ Make sure to implement according to the following class descriptions, or modify 
     +operator==(rhs: mat4 const&):bool
     +operator!=(rhs: mat4 const&):bool
     +operator[](i: ui32 const):vec4& // range [0,3]
-#### Functions
+#### Functions (not part of the class)
     determinant(m: mat4 const&):f32
     inverse(m: mat4 const&):mat4 // returns identity upon failure
     transpose(m: mat4 const&):mat4
