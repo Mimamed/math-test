@@ -24,13 +24,13 @@ Make sure to implement according to the following class descriptions, or modify 
     +vec3(x: f32 const, y: f32 const, z: f32 const)
     +vec3(v: vec3 const&)
 #### Methods and operators
-    +operator=(rhs: vec3 const&):vec3
+    +operator=(rhs: vec3 const&):vec3&
     +operator-():vec3
     +operator+(rhs: vec3 const&):vec3
-    +operator+=(rhs: vec3 const&):void
+    +operator+=(rhs: vec3 const&):vec3&
     +operator-(rhs: vec3 const&):vec3
-    +operator-=(rhs: vec3 const&):void
-    +operator*=(scalar: f32 const):void
+    +operator-=(rhs: vec3 const&):vec3&
+    +operator*=(scalar: f32 const):vec3&
     +operator*(scalar: f32 const):vec3
     +operator==(rhs: vec3 const&):bool
     +operator!=(rhs: vec3 const&):bool
@@ -52,13 +52,13 @@ Make sure to implement according to the following class descriptions, or modify 
     +vec4(x: f32 const, y: f32 const, z: f32 const, w: f32 const)
     +vec4(v: vec4 const&)
 #### Methods and operators
-    +operator=(rhs: vec4 const&):vec4
+    +operator=(rhs: vec4 const&):vec4&
     +operator-():vec4
     +operator+(rhs: vec4 const&):vec4
-    +operator+=(rhs: vec4 const&):void
+    +operator+=(rhs: vec4 const&):vec4&
     +operator-(rhs: vec4 const&):vec4
-    +operator-=(rhs: vec4 const&):void
-    +operator*=(scalar: f32 const):void
+    +operator-=(rhs: vec4 const&):vec4&
+    +operator*=(scalar: f32 const):vec4&
     +operator*(scalar: f32 const):vec4
     +operator==(rhs: vec4 const&):bool
     +operator!=(rhs: vec4 const&):bool
@@ -76,7 +76,7 @@ Make sure to implement according to the following class descriptions, or modify 
     +mat4(r0: vec4 const&, r1: vec4 const&, r2: vec4 const&, r3: vec4 const&)
     +mat4(m: mat4 const&)
 #### Methods and operators
-    +operator=(rhs: mat4 const&):mat4
+    +operator=(rhs: mat4 const&):mat4&
     +operator*(rhs: mat4 const&):mat4
     +operator==(rhs: mat4 const&):bool
     +operator!=(rhs: mat4 const&):bool
