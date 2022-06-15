@@ -244,7 +244,7 @@ int main()
         VERIFY((result == pOneTwoThree));
 
         // multiplication and multiplication order, transform point by matrix
-        const mat4 mRotOneX_Trans123 = rotOneX * trans123;
+        const mat4 mRotOneX_Trans123 = trans123 * rotOneX;
         VERIFY(matnearequal(mRotOneX_Trans123,
                             mat4(vec4(1.0f,       0.0f,      0.0f, 0.0f),
                                  vec4(0.0f,  0.540302f, 0.841471f, 0.0f),
@@ -326,27 +326,27 @@ int main()
         VERIFY(matnearequal(tmp, mat4(vec4(  -1.0f,  0.0f,  0.0f, 0.0f),
                                       vec4(  0.0f,  1.0f,  0.0f, 0.0f),
                                       vec4(  0.0f, 0.0f,  -1.0f, 0.0f),
-                                      vec4(  3.0f, 2.0f, 10.0f, 1.0f))));
+                                      vec4(  3.0f, -2.0f, 10.0f, 1.0f))));
         // perspfovlh
         tmp = perspective(70.0f, 3.0f/4.0f, 0.1f, 50.0f);
         VERIFY(matnearequal(tmp, mat4(vec4( 2.814039f,     0.0f,      0.0f, 0.0f),
                                       vec4(      0.0f, 2.11053f,      0.0f, 0.0f),
-                                      vec4(      0.0f,     0.0f, 1.002004f, 1.0f),
-                                      vec4(      0.0f,     0.0f,  -0.1002f, 0.0f))));        
+                                      vec4(      0.0f,     0.0f, 1.004008f, 1.0f),
+                                      vec4(      0.0f,     0.0f,  -0.2004008f, 0.0f))));        
 #else
         // lookatrh
         mat4 tmp = lookat(eye, at, up);
         VERIFY(matnearequal(tmp, mat4(vec4(  1.0f,  0.0f,  0.0f, 0.0f),
                                       vec4(  0.0f,  1.0f,  0.0f, 0.0f),
                                       vec4(  0.0f,  0.0f,  1.0f, 0.0f),
-                                      vec4(  3.0f, 2.0f, 10.0f, 1.0f))));
+                                      vec4(  -3.0f, -2.0f, -10.0f, 1.0f))));
 
         // perspfovrh
         tmp = perspective(70.0f, 3.0f/4.0f, 0.1f, 50.0f);
         VERIFY(matnearequal(tmp, mat4(vec4( 2.814039f,     0.0f,       0.0f,  0.0f),
                                       vec4(      0.0f, 2.11053f,       0.0f,  0.0f),
-                                      vec4(      0.0f,     0.0f, -1.002004f, -1.0f),
-                                      vec4(      0.0f,     0.0f,  -0.1002f,   0.0f))));
+                                      vec4(      0.0f,     0.0f, -1.004008f, -1.0f),
+                                      vec4(      0.0f,     0.0f,  -0.2004008f,   0.0f))));
 #endif
 #endif
     }
