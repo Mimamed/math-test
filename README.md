@@ -1,5 +1,7 @@
 Simple program for testing your math library.
 
+Matrices should be stored in row major order.
+
 Add your class files (vec3.h, vec4.h, mat4.h) to the root directory and add them to the list of files located in CMakeLists.txt
 
 Build and run test by executing the run_test.bat file, or by using CMake GUI.
