@@ -80,6 +80,7 @@ Make sure to implement according to the following class descriptions, or modify 
 #### Methods and operators
     +operator=(rhs: mat4 const&):mat4&
     +operator*(rhs: mat4 const&):mat4
+    +operator*(rhs: vec4 const&):vec4
     +operator==(rhs: mat4 const&):bool
     +operator!=(rhs: mat4 const&):bool
     +operator[](i: ui32 const):vec4& // range [0,3]
