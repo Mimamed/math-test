@@ -93,7 +93,7 @@ Make sure to implement according to the following class descriptions, or modify 
     rotationz(rad: f32 const):mat4
     rotationaxis(v: vec3 const&, rad: f32 const):mat4
 #### Optional functions
-    perspective(fovy: f32 const, aspect: f32 const, near: f32 const, far: f32 const): mat4
+    perspective(fovy: f32 const, aspect: f32 const, near: f32 const, far: f32 const): mat4 // fovy expressed in radians
     lookat(eye: vec3 const&, at: vec3 const&, up: vec3 const&): mat4
 
 Add `#define TEST_VIEW_PERSPECTIVE` to top of main.cc to test perspective and view matrix functions.
