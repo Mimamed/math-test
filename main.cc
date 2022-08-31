@@ -328,6 +328,7 @@ int main()
                                       vec4(  0.0f, 0.0f,  -1.0f, 0.0f),
                                       vec4(  3.0f, -2.0f, 10.0f, 1.0f))));
         // perspfovlh
+	// fovy is expressed in radians (yes, really)
         tmp = perspective(70.0f, 3.0f/4.0f, 0.1f, 50.0f);
         VERIFY(matnearequal(tmp, mat4(vec4( 2.814039f,     0.0f,      0.0f, 0.0f),
                                       vec4(      0.0f, 2.11053f,      0.0f, 0.0f),
@@ -342,6 +343,7 @@ int main()
                                       vec4(  -3.0f, -2.0f, -10.0f, 1.0f))));
 
         // perspfovrh
+	// fovy is expressed in radians (yes, really)
         tmp = perspective(70.0f, 3.0f/4.0f, 0.1f, 50.0f);
         VERIFY(matnearequal(tmp, mat4(vec4( 2.814039f,     0.0f,       0.0f,  0.0f),
                                       vec4(      0.0f, 2.11053f,       0.0f,  0.0f),
