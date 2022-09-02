@@ -2,6 +2,7 @@
 #include "vec3.h"
 #include "vec4.h"
 #include "mat4.h"
+#include <cmath>
 
 inline vec3 max(vec3 a, vec3 b)
 {
