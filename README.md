@@ -14,7 +14,7 @@ Make sure to implement according to the following class descriptions, or modify 
 * `const&` = const reference
 * `+` = public variable or method
 * `-` = private variable or method
-* `name(args):return_type` = function or method
+* `name(args) [const]:return_type` = function or method, const denotes the method should not modify the object.
 
 # class vec3
 #### Members
@@ -27,16 +27,17 @@ Make sure to implement according to the following class descriptions, or modify 
     +vec3(v: vec3 const&)
 #### Methods and operators
     +operator=(rhs: vec3 const&):vec3&
-    +operator-():vec3
-    +operator+(rhs: vec3 const&):vec3
+    +operator-() const:vec3
+    +operator+(rhs: vec3 const&) const:vec3
     +operator+=(rhs: vec3 const&):vec3&
-    +operator-(rhs: vec3 const&):vec3
+    +operator-(rhs: vec3 const&) const:vec3
     +operator-=(rhs: vec3 const&):vec3&
     +operator*=(scalar: f32 const):vec3&
-    +operator*(scalar: f32 const):vec3
-    +operator==(rhs: vec3 const&):bool
-    +operator!=(rhs: vec3 const&):bool
+    +operator*(scalar: f32 const) const:vec3
+    +operator==(rhs: vec3 const&) const:bool
+    +operator!=(rhs: vec3 const&) const:bool
     +operator[](i: ui32 const):f32& // range [0,2]
+    +operator[](i: ui32 const) const:f32 const& // range [0,2]
 #### Functions (not part of the class)
     dot(a: vec3 const&, b: vec3 const&):f32
     length(v: vec3 const&):f32
@@ -55,16 +56,17 @@ Make sure to implement according to the following class descriptions, or modify 
     +vec4(v: vec4 const&)
 #### Methods and operators
     +operator=(rhs: vec4 const&):vec4&
-    +operator-():vec4
-    +operator+(rhs: vec4 const&):vec4
+    +operator-() const:vec4
+    +operator+(rhs: vec4 const&) const:vec4
     +operator+=(rhs: vec4 const&):vec4&
-    +operator-(rhs: vec4 const&):vec4
+    +operator-(rhs: vec4 const&) const:vec4
     +operator-=(rhs: vec4 const&):vec4&
     +operator*=(scalar: f32 const):vec4&
-    +operator*(scalar: f32 const):vec4
-    +operator==(rhs: vec4 const&):bool
-    +operator!=(rhs: vec4 const&):bool
-    +operator[](i: ui32 const):f32 // range [0,3]
+    +operator*(scalar: f32 const) const:vec4
+    +operator==(rhs: vec4 const&) const:bool
+    +operator!=(rhs: vec4 const&) const:bool
+    +operator[](i: ui32 const):f32& // range [0,3]
+    +operator[](i: ui32 const) const:f32 const& // range [0,3]
 #### Functions (not part of the class)
     dot(a: vec4 const&, b: vec4 const&):f32
     length(v: vec4 const&):f32
@@ -79,11 +81,12 @@ Make sure to implement according to the following class descriptions, or modify 
     +mat4(m: mat4 const&)
 #### Methods and operators
     +operator=(rhs: mat4 const&):mat4&
-    +operator*(rhs: mat4 const&):mat4
-    +operator*(rhs: vec4 const&):vec4
-    +operator==(rhs: mat4 const&):bool
-    +operator!=(rhs: mat4 const&):bool
+    +operator*(rhs: mat4 const&) const:mat4
+    +operator*(rhs: vec4 const&) const:vec4
+    +operator==(rhs: mat4 const&) const:bool
+    +operator!=(rhs: mat4 const&) const:bool
     +operator[](i: ui32 const):vec4& // range [0,3]
+    +operator[](i: ui32 const) const:vec4 const& // range [0,3]
 #### Functions (not part of the class)
     determinant(m: mat4 const&):f32
     inverse(m: mat4 const&):mat4 // returns identity upon failure
