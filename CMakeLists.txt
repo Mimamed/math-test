@@ -12,6 +12,7 @@ SET(files
 		vec4.h
 		vec3.h
 		mat4.h
+		CMakeLists.txt
 	)
 ####################################
 
